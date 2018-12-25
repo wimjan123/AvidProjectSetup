@@ -1,10 +1,18 @@
-from pathlib import Path
-import os
-import sys
+import wx
+
+app = wx.App()
+
+frmf = wx.Frame(None, title="NLE_KeyConvert")
+
+def avid_button_clicked(event):
 
 
-fn=input("Location: ")
+avid_button = wx.Button(frmf, label="Avid Media Composer", size=(0.4,3))
+avid_button.Bind(wx.EVT_BUTTON, avid_button_clicked)
 
-fn = sys.argv[1]
-if os.path.exists(fn):
-    print=(os.path.basename(fn))
+
+frmf.Show()
+
+
+
+app.MainLoop()
